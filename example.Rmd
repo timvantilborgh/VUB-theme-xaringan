@@ -1,9 +1,9 @@
 ---
-title: "Presentation Ninja"
-subtitle: "⚔<br/>with xaringan"
-author: "Yihui Xie"
-institute: "RStudio, PBC"
-date: "2016/12/12 (updated: `r Sys.Date()`)"
+title: "VUB theme for xaringan presentations"
+subtitle: “An example"
+author: "Tim Vantilborgh"
+institute: "Vrije Universiteit Brussel"
+date: "2020/12/13 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     css: ["VUB-theme.css", "VUB-fonts.css"]
@@ -19,28 +19,22 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
-background-size: 100%
-background-image: url(https://media.giphy.com/media/94iS62lx8CRQA/giphy.gif)
+# Welcome
 
-???
-
-Image test. Taken from google. 
-
----
-class: center, middle
-
-# xaringan
-
-### /ʃaː.'riŋ.ɡan/
+- This example presentation demonstrates what the VUB theme looks like
+- This theme is based on the Rutgers theme for xaringan
+- It uses the fonts, logo, and colour scheme of the VUB style
+- Feel free to use this theme, share it, or adapt it
+- If you have suggestions for further improvements, create an issue on github
 
 ---
 class: inverse, center, middle
 
-# Get Started
+# You can create inverse slide layouts
 
 ---
 
-# Hello World
+# Installing xaringan
 
 Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
 
@@ -67,50 +61,6 @@ You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rs
 
 [2] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio.
 ]
-
----
-background-image: url(`r xaringan:::karl`)
-background-position: 50% 50%
-class: center, bottom, inverse
-
-# You only live once!
-
----
-
-# Hello Ninja
-
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
-
-1. The [remark.js](https://remarkjs.com) library;
-
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
-
----
-
-# remark.js
-
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
-
-- create a new slide (Markdown syntax<sup>*</sup> and slide properties);
-
-- format a slide (e.g. text alignment);
-
-- configure the slideshow;
-
-- and use the presentation (keyboard shortcuts).
-
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
-
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
-
----
-background-image: url(`r xaringan:::karl`)
-background-size: cover
-class: center, bottom, inverse
-
-# I was so happy to have discovered remark.js!
 
 ---
 class: inverse, middle, center
@@ -492,126 +442,8 @@ Question: what does `highlight.output = c(TRUE, FALSE)` mean? (Hint: think about
 
 ---
 
-# CSS
-
-Among all options in `xaringan::moon_reader`, the most challenging but perhaps also the most rewarding one is `css`, because it allows you to customize the appearance of your slides using any CSS rules or hacks you know.
-
-You can see the default CSS file [here](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/default.css). You can completely replace it with your own CSS files, or define new rules to override the default. See the help page `?xaringan::moon_reader` for more information.
-
----
-
-# CSS
-
-For example, suppose you want to change the font for code from the default "Source Code Pro" to "Ubuntu Mono". You can create a CSS file named, say, `ubuntu-mono.css`:
-
-```css
-@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-```
-
-Then set the `css` option in the YAML metadata:
-
-```yaml
-output:
-  xaringan::moon_reader:
-    css: ["default", "ubuntu-mono.css"]
-```
-
-Here I assume `ubuntu-mono.css` is under the same directory as your Rmd.
-
-See [yihui/xaringan#83](https://github.com/yihui/xaringan/issues/83) for an example of using the [Fira Code](https://github.com/tonsky/FiraCode) font, which supports ligatures in program code.
-
----
-
-# Themes
-
-Don't want to learn CSS? Okay, you can use some user-contributed themes. A theme typically consists of two CSS files `foo.css` and `foo-fonts.css`, where `foo` is the theme name. Below are some existing themes:
-
-```{r, R.options=list(width = 70)}
-names(xaringan:::list_css())
-```
-
----
-
-# Themes
-
-To use a theme, you can specify the `css` option as an array of CSS filenames (without the `.css` extensions), e.g.,
-
-```yaml
-output:
-  xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts]
-```
-
-If you want to contribute a theme to **xaringan**, please read [this blog post](https://yihui.org/en/2017/10/xaringan-themes).
-
----
-class: inverse, middle, center
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
-background-size: contain
-
-# Naruto
-
----
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-background-size: 100px
-background-position: 90% 8%
-
-# Sharingan
-
-The R package name **xaringan** was derived<sup>1</sup> from **Sharingan**, a dōjutsu in the Japanese anime _Naruto_ with two abilities:
-
-- the "Eye of Insight"
-
-- the "Eye of Hypnotism"
-
-I think a presentation is basically a way to communicate insights to the audience, and a great presentation may even "hypnotize" the audience.<sup>2,3</sup>
-
-.footnote[
-[1] In Chinese, the pronounciation of _X_ is _Sh_ /ʃ/ (as in _shrimp_). Now you should have a better idea of how to pronounce my last name _Xie_.
-
-[2] By comparison, bad presentations only put the audience to sleep.
-
-[3] Personally I find that setting background images for slides is a killer feature of remark.js. It is an effective way to bring visual impact into your presentations.
-]
-
----
-
-# Naruto terminology
-
-The **xaringan** package borrowed a few terms from Naruto, such as
-
-- [Sharingan](https://naruto.fandom.com/wiki/Sharingan) (写輪眼; the package name)
-
-- The [moon reader](https://naruto.fandom.com/wiki/Moon_Reader) (月読; an attractive R Markdown output format)
-
-- [Chakra](https://naruto.fandom.com/wiki/Chakra) (查克拉; the path to the remark.js library, which is the power to drive the presentation)
-
-- [Nature transformation](https://naruto.fandom.com/wiki/Nature_Transformation) (性質変化; transform the chakra by setting different options)
-
-- The [infinite moon reader](https://naruto.fandom.com/wiki/Infinite_Tsukuyomi) (無限月読; start a local web server to continuously serve your slides)
-
-- The [summoning technique](https://naruto.fandom.com/wiki/Summoning_Technique) (download remark.js from the web)
-
-You can click the links to know more about them if you want. The jutsu "Moon Reader" may seem a little evil, but that does not mean your slides are evil.
-
----
-
-class: center
-
-# Hand seals (印)
-
-Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
-
-![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)
-
----
-
 class: title-slide-final
 
 # Thanks!
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
-
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
