@@ -10,6 +10,8 @@ The theme is based on the [Rutgers theme by Joseph Casillas](https://github.com/
 ## Example
 The file example.rmd and example.html illustrate what the VUB theme looks like. Feel free to take a look and play around with the example.
 
+Example presentation [here](https://htmlpreview.github.io/?https://github.com/timvantilborgh/VUB-theme-xaringan/blob/main/example.html)
+
 ## Using the css theme
 1. Download the *VUB-theme.css* and the *VUB-fonts.css* files
 2. Install RStudio
